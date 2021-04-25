@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 // Jquery 
+=======
+// Jquery
+>>>>>>> Fixed
 
 
 (function($) {
 $(document).ready(function() {
+<<<<<<< HEAD
     
    jQuery('.tab').on('click', function() {
   
@@ -10,12 +15,25 @@ $(document).ready(function() {
          
         var selectContent = this.getAttribute('data-toggle-target');
          
+=======
+
+   jQuery('.tab').on('click', function() {
+
+    jQuery(this).siblings('.tab').removeClass('active').end().addClass('active');
+
+        var selectContent = this.getAttribute('data-toggle-target');
+
+>>>>>>> Fixed
         jQuery('.tab-content').removeClass('active').filter(selectContent).addClass('active');
 
 
         return false;
       });
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> Fixed
 
 })
 
@@ -37,7 +55,11 @@ const lowerPropertyPrice = document.getElementById('propertyPriceLower');
 const upperAvailableDeposit = document.getElementById('availableDepositUpper');
 const lowerAvailableDeposit = document.getElementById('availableDepositLower');
 const mortgageTerm = document.getElementById('mortgageTerm');
+<<<<<<< HEAD
 const interestRate = document.getElementById ('interestRate');
+=======
+const moneyAdviceinterestRate = document.getElementById ('interestRate');
+>>>>>>> Fixed
 
 // Texts
 const nextButton = document.getElementById('calculatorNext');
@@ -63,7 +85,11 @@ function isNumber(evt) {
 
 
 
+<<<<<<< HEAD
 // Property Upper 
+=======
+// Property Upper
+>>>>>>> Fixed
 
 upperPropertyPrice.addEventListener('input', function(){
     nextButtonTrigger();
@@ -115,12 +141,21 @@ function nextButtonTrigger(){
 
     if (upperPropertyPrice.value == '' || upperAvailableDeposit.value == ''){
         nextButton.classList.add('disabled');
+<<<<<<< HEAD
     } 
     else {
         nextButton.classList.remove('disabled'); 
         
         nextButton.addEventListener('click', function () {
             
+=======
+    }
+    else {
+        nextButton.classList.remove('disabled');
+
+        nextButton.addEventListener('click', function () {
+
+>>>>>>> Fixed
             if(count == 0 ){
 
 
@@ -130,10 +165,17 @@ function nextButtonTrigger(){
                 lowerAvailableDeposit.value = upperDeposit;
                 document.getElementById('upperContent').style.display = 'none';
                 document.getElementById('lowerContent').style.display = 'block';
+<<<<<<< HEAD
                 
                 calculate();
     
                 var mySlider = new rSlider({
+=======
+
+                calculate();
+
+                var termRangeSlider = new rSlider({
+>>>>>>> Fixed
                     target: '#termRange',
                     values: {
                         min: 5,
@@ -148,11 +190,19 @@ function nextButtonTrigger(){
                        calculate();
                     },
                     set: [25],
+<<<<<<< HEAD
                     
                 });
 
 
                 var mySlider = new rSlider({
+=======
+
+                });
+
+
+                var interestRangeSlider = new rSlider({
+>>>>>>> Fixed
                     target: '#interestRange',
                     values: {
                         min: 0.25,
@@ -163,17 +213,29 @@ function nextButtonTrigger(){
                     step: 0.25,
                     range: false,
                     onChange: function(rateData){
+<<<<<<< HEAD
                         interestRate.value = rateData;
                         calculate();
                     },
                     set: [4],
                     
+=======
+                        moneyAdviceinterestRate.value = rateData;
+                        calculate();
+                    },
+                    set: [4],
+
+>>>>>>> Fixed
                 });
 
 
             }
             count++ ;
+<<<<<<< HEAD
            
+=======
+
+>>>>>>> Fixed
         })
     }
 }
@@ -197,14 +259,24 @@ lowerAvailableDeposit.addEventListener('input', function(){
 
 function calculate(){
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> Fixed
 
     // Get Values from input
     let propertyPrice = +lowerPropertyPrice.value;
     let depositAmount = +lowerAvailableDeposit.value
+<<<<<<< HEAD
     
     let mortgageYear  = +mortgageTerm.value;
     let interestRateAmount  = +interestRate.value;
+=======
+
+    let mortgageYear  = +mortgageTerm.value;
+    let interestRateAmount  = +moneyAdviceinterestRate.value;
+>>>>>>> Fixed
 
 
     if(depositAmount > propertyPrice){
@@ -223,7 +295,11 @@ function calculate(){
     //Monthly Interest
     let monthlyInterest = ((principleAmount * interestRateAmount) / 100)/12 ;
 
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> Fixed
 
     // Monthly Payment 3% more
 
@@ -242,10 +318,17 @@ function calculate(){
     document.getElementById('repaymentMonthlyTotal').innerText = '£' + increasedMonthlyPayment.toFixed(2);
     document.getElementById('interestAmount').innerText = monthlyInterest;
     document.getElementById('onlyTotalInterest').innerText = '£' + increasedmonthlyInterest.toFixed(2);
+<<<<<<< HEAD
    
     }
 
     
+=======
+
+    }
+
+
+>>>>>>> Fixed
 
 
     }
@@ -264,6 +347,7 @@ document.getElementById('calculatorBack').addEventListener('click', function(){
     upperPropertyPrice.value = ''
 
 })
+<<<<<<< HEAD
 
 
     
@@ -276,3 +360,5 @@ document.getElementById('calculatorBack').addEventListener('click', function(){
 
 
 
+=======
+>>>>>>> Fixed

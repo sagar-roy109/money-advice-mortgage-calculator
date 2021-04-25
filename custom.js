@@ -4,13 +4,13 @@
 (function($) {
 $(document).ready(function() {
     
-    $('.tab').on('click', function() {
+   jQuery('.tab').on('click', function() {
   
-        $(this).siblings('.tab').removeClass('active').end().addClass('active');
+    jQuery(this).siblings('.tab').removeClass('active').end().addClass('active');
          
         var selectContent = this.getAttribute('data-toggle-target');
          
-        $('.tab-content').removeClass('active').filter(selectContent).addClass('active');
+        jQuery('.tab-content').removeClass('active').filter(selectContent).addClass('active');
 
 
         return false;

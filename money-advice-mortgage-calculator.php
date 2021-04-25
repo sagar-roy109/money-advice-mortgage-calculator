@@ -36,7 +36,7 @@ function money_advice_mortgage_custom_menu()
         "Money Mortgage Calculator", // menu title
         "manage_options", // admin level
         "money-advice-mortgage-calculator", // slug
-        "mortgage_admin_view" // output function
+        "money_advice_mortgage_admin_view" // output function
     );
 }
 

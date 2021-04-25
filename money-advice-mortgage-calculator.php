@@ -29,20 +29,20 @@ define("PLUGIN_URL", plugins_url());
 
 // Register Admin Page for Plugin
 
-function mortgage_custom_menu()
+function money_advice_mortgage_custom_menu()
 {
     add_menu_page(
         "mortgagecalc",  // Page title
-        "Mortgage Calculator", // menu title
+        "Money Mortgage Calculator", // menu title
         "manage_options", // admin level
-        "mortgage-calculator", // slug
+        "money-advice-mortgage-calculator", // slug
         "mortgage_admin_view" // output function
     );
 }
 
-add_action("admin_menu", "mortgage_custom_menu");
+add_action("admin_menu", "money_advice_mortgage_custom_menu");
 
-function mortgage_admin_view()
+function money_advice_mortgage_admin_view()
 {
     include_once PLUGIN_DIR_PATH."/admin-view/admin-panel-output.php";
 }
@@ -55,14 +55,14 @@ function mortgage_admin_view()
 
 //adding styles  worpress admin
 
-if(!function_exists("mortgage_calc_admin_assests")) :
-	function mortgage_calc_admin_assests() {
+if(!function_exists("money_advice_mortgage_calc_admin_assests")) :
+	function money_advice_mortgage_calc_admin_assests() {
 		global $pagenow;
 
 		$current_page = get_current_screen();
 
 		if( 
-            (isset($_GET["page"]) && $_GET["page"] === 'mortgage-calculator')
+            (isset($_GET["page"]) && $_GET["page"] === 'money-advice-mortgage-calculator')
 		) { 
 			wp_enqueue_style(
                 "mortgage_bootstrap",
@@ -74,7 +74,7 @@ if(!function_exists("mortgage_calc_admin_assests")) :
     
 //end of adding styles and scripts for wordpress admin.
 
-add_action('admin_enqueue_scripts', 'mortgage_calc_admin_assests', 1);
+add_action('admin_enqueue_scripts', 'money_advice_mortgage_calc_admin_assests', 1);
 
 endif;
 
@@ -85,7 +85,7 @@ endif;
 
 //Assets For Output
 
-function morgage_custom_assets(){
+function money_advice_morgage_custom_assets(){
     
     //Bootstrap
     
@@ -156,7 +156,7 @@ function morgage_custom_assets(){
 }
 
 
-add_action("wp_enqueue_scripts" , "morgage_custom_assets");
+add_action("wp_enqueue_scripts" , "money_advice_morgage_custom_assets");
 
 
 
@@ -166,9 +166,9 @@ add_action("wp_enqueue_scripts" , "morgage_custom_assets");
 
 
 
-add_shortcode('money_advice_calculator', "mortgage_buy_to_let_shortcode");
+add_shortcode('money_advice_calculator', "money_advice_calculator_shortcode");
 
-function mortgage_buy_to_let_shortcode($params){
+function money_advice_calculator_shortcode($params){
     $values = shortcode_atts(
 
         array(

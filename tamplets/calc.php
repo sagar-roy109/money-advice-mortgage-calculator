@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mone Advice Mortgage Calc</title>
-        <!-- Bootstrap  -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-            crossorigin="anonymous"
-        >
-        <!-- Range Slider  -->
-        <link rel="stylesheet" href="assets/css/rSlider.min.css">
-        <!-- Style Css  -->
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+
         <div class="money-advice-calculator">
             <div class="container">
                 <div class="row">
@@ -242,7 +223,7 @@
                                                     Choose the right type of mortgage and consider getting an adviser
                                                 </b>
                                                 <br>
-                                                <a href="#">Mortgage advice-should you get a mortgage advisor?</a>
+                                                <a target="_blank" href="<?php echo $values['first_url'] ?>">Mortgage advice-should you get a mortgage advisor?</a>
                                             </p>
                                         </li>
                                         <li>
@@ -251,7 +232,7 @@
                                                     Increase your deposit
                                                 </b>
                                                 <br>
-                                                <a href="#">How to set a saving goal</a>
+                                                <a target="_blank" href="<?php echo $values['second_url'] ?>">How to set a saving goal</a>
                                             </p>
                                         </li>
                                         <li>
@@ -260,7 +241,7 @@
                                                     Are you eligible for an affordable housing scheme?
                                                 </b>
                                                 <br>
-                                                <a href="#">Government scheme for first time home buyers and existing home owners</a>
+                                                <a target="_blank" href="<?php echo $values['third_url'] ?>">Government scheme for first time home buyers and existing home owners</a>
                                             </p>
                                         </li>
                                     </ol>
@@ -271,9 +252,3 @@
                 </div>
             </div>
         </div>
-        <!-- Custom Js  -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/assets/js/rSlider.min.js"></script>
-        <script src="custom.js"></script>
-    </body>
-</html>

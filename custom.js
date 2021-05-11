@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 (function($) {
     $(document).ready(function() {
@@ -85,6 +86,122 @@
         }else{
             upperNotice.style.display = "none";
         }
+=======
+<<<<<<< HEAD
+// Jquery 
+=======
+// Jquery
+>>>>>>> Fixed
+
+
+(function($) {
+$(document).ready(function() {
+<<<<<<< HEAD
+    
+   jQuery('.tab').on('click', function() {
+  
+    jQuery(this).siblings('.tab').removeClass('active').end().addClass('active');
+         
+        var selectContent = this.getAttribute('data-toggle-target');
+         
+=======
+
+   jQuery('.tab').on('click', function() {
+
+    jQuery(this).siblings('.tab').removeClass('active').end().addClass('active');
+
+        var selectContent = this.getAttribute('data-toggle-target');
+
+>>>>>>> Fixed
+        jQuery('.tab-content').removeClass('active').filter(selectContent).addClass('active');
+
+
+        return false;
+      });
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> Fixed
+
+})
+
+
+})(jQuery);
+
+
+
+
+
+
+
+
+//  Get elements
+
+//inputs
+const upperPropertyPrice = document.getElementById('propertyPriceUpper');
+const lowerPropertyPrice = document.getElementById('propertyPriceLower');
+const upperAvailableDeposit = document.getElementById('availableDepositUpper');
+const lowerAvailableDeposit = document.getElementById('availableDepositLower');
+const mortgageTerm = document.getElementById('mortgageTerm');
+<<<<<<< HEAD
+const interestRate = document.getElementById ('interestRate');
+=======
+const moneyAdviceinterestRate = document.getElementById ('interestRate');
+>>>>>>> Fixed
+
+// Texts
+const nextButton = document.getElementById('calculatorNext');
+const upperNotice = document.getElementById('calculatorUpperNotice');
+
+
+
+
+
+// Allow only Integer Number On Inputs
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
+
+
+
+
+
+<<<<<<< HEAD
+// Property Upper 
+=======
+// Property Upper
+>>>>>>> Fixed
+
+upperPropertyPrice.addEventListener('input', function(){
+    nextButtonTrigger();
+    maximumValueCheck();
+})
+
+// Available Deposit Upper
+
+upperAvailableDeposit.addEventListener('input', function(){
+    nextButtonTrigger();
+    showUpperNotice();
+    maximumValueCheck();
+})
+
+
+// upper notice
+
+function showUpperNotice(){
+    if(upperAvailableDeposit.value !== ""){
+        upperNotice.style.display = "block";
+    }else{
+        upperNotice.style.display = "none";
+>>>>>>> 718491a3499b2e968ff5c9d5b0675dbdf329d350
     }
     
     // Value Check
@@ -95,6 +212,7 @@
             nextButton.classList.add('disabled');
         }
     }
+<<<<<<< HEAD
     
     
     
@@ -274,6 +392,236 @@
     
     
     
+=======
+}
+
+
+
+
+
+
+
+
+
+
+nextButton.classList.add('disabled');
+
+let count = 0;
+
+function nextButtonTrigger(){
+
+    if (upperPropertyPrice.value == '' || upperAvailableDeposit.value == ''){
+        nextButton.classList.add('disabled');
+<<<<<<< HEAD
+    } 
+    else {
+        nextButton.classList.remove('disabled'); 
+        
+        nextButton.addEventListener('click', function () {
+            
+=======
+    }
+    else {
+        nextButton.classList.remove('disabled');
+
+        nextButton.addEventListener('click', function () {
+
+>>>>>>> Fixed
+            if(count == 0 ){
+
+
+                let upperProperty = upperPropertyPrice.value;
+                let upperDeposit = upperAvailableDeposit.value;
+                lowerPropertyPrice.value = upperProperty;
+                lowerAvailableDeposit.value = upperDeposit;
+                document.getElementById('upperContent').style.display = 'none';
+                document.getElementById('lowerContent').style.display = 'block';
+<<<<<<< HEAD
+                
+                calculate();
+    
+                var mySlider = new rSlider({
+=======
+
+                calculate();
+
+                var termRangeSlider = new rSlider({
+>>>>>>> Fixed
+                    target: '#termRange',
+                    values: {
+                        min: 5,
+                        max: 40,
+                    },
+                    scale: false,
+                    labels: false,
+                    step: 1,
+                    range: false,
+                    onChange : function(termData){
+                       mortgageTerm.value = termData;
+                       calculate();
+                    },
+                    set: [25],
+<<<<<<< HEAD
+                    
+                });
+
+
+                var mySlider = new rSlider({
+=======
+
+                });
+
+
+                var interestRangeSlider = new rSlider({
+>>>>>>> Fixed
+                    target: '#interestRange',
+                    values: {
+                        min: 0.25,
+                        max: 15,
+                    },
+                    scale: false,
+                    labels: false,
+                    step: 0.25,
+                    range: false,
+                    onChange: function(rateData){
+<<<<<<< HEAD
+                        interestRate.value = rateData;
+                        calculate();
+                    },
+                    set: [4],
+                    
+=======
+                        moneyAdviceinterestRate.value = rateData;
+                        calculate();
+                    },
+                    set: [4],
+
+>>>>>>> Fixed
+                });
+
+
+            }
+            count++ ;
+<<<<<<< HEAD
+           
+=======
+
+>>>>>>> Fixed
+        })
+    }
+}
+
+
+
+
+// Property Lower
+
+lowerPropertyPrice.addEventListener('input', function(){
+    calculate();
+})
+
+// Available Deposit Lower
+
+lowerAvailableDeposit.addEventListener('input', function(){
+    calculate();
+})
+
+
+
+function calculate(){
+
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> Fixed
+
+    // Get Values from input
+    let propertyPrice = +lowerPropertyPrice.value;
+    let depositAmount = +lowerAvailableDeposit.value
+<<<<<<< HEAD
+    
+    let mortgageYear  = +mortgageTerm.value;
+    let interestRateAmount  = +interestRate.value;
+=======
+
+    let mortgageYear  = +mortgageTerm.value;
+    let interestRateAmount  = +moneyAdviceinterestRate.value;
+>>>>>>> Fixed
+
+
+    if(depositAmount > propertyPrice){
+        alert('Deposit should less than property value');
+    } else{
+        // Calculation
+    let principleAmount = (propertyPrice - depositAmount);
+    let percentageRate = interestRateAmount / 1200;
+    let lengthOfLoan = 12 * mortgageYear;
+
+    // Monthly Payment
+    let monthlyPayment = (principleAmount * percentageRate) / (1-(Math.pow((1+percentageRate), lengthOfLoan * -1)));
+    monthlyPayment = monthlyPayment.toFixed(2);
+
+
+    //Monthly Interest
+    let monthlyInterest = ((principleAmount * interestRateAmount) / 100)/12 ;
+
+<<<<<<< HEAD
+    
+=======
+
+>>>>>>> Fixed
+
+    // Monthly Payment 3% more
+
+    let increaseedInterest = ( interestRateAmount+ 3 ) ;
+    let increasePercentageRate = increaseedInterest / 1200
+    let increasedMonthlyPayment = (principleAmount * increasePercentageRate) / (1-(Math.pow((1+increasePercentageRate), lengthOfLoan * -1)));
+
+
+    // Monthly Interest 3% increased
+    let increasedmonthlyInterest = ((principleAmount * increaseedInterest) / 100)/12 ;
+
+
+    // OutPut
+
+    document.getElementById('repaymentAmount').innerText = monthlyPayment;
+    document.getElementById('repaymentMonthlyTotal').innerText = '£' + increasedMonthlyPayment.toFixed(2);
+    document.getElementById('interestAmount').innerText = monthlyInterest;
+    document.getElementById('onlyTotalInterest').innerText = '£' + increasedmonthlyInterest.toFixed(2);
+<<<<<<< HEAD
+   
+    }
+
+    
+=======
+
+    }
+
+
+>>>>>>> Fixed
+
+
+    }
+
+
+
+// Back Button
+
+
+document.getElementById('calculatorBack').addEventListener('click', function(){
+
+    document.getElementById('upperContent').style.display = 'block';
+    document.getElementById('lowerContent').style.display = 'none';
+    location.reload();
+    upperAvailableDeposit.value = '';
+    upperPropertyPrice.value = ''
+
+})
+<<<<<<< HEAD
+
+
+>>>>>>> 718491a3499b2e968ff5c9d5b0675dbdf329d350
     
 
 
@@ -284,3 +632,5 @@
 
 
 
+=======
+>>>>>>> Fixed
